@@ -6,6 +6,10 @@
 //  Copyright © 2019 Jan Hovland. All rights reserved.
 //
 
+
+// Ved å scrolle oppover, kan en se hvilket felt som er valgt
+
+
 import SwiftUI
 
 struct ContentView : View {
@@ -14,33 +18,32 @@ struct ContentView : View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var password_two: String = ""
+    @State private var password_three: String = ""
 
     var body: some View {
         NavigationView {
             Form {
-                
-                Section {
+                Section  {
                     Text("Name")
                     TextField("Name", text: $name)
                 }
-                
-                Section {
+                Section  {
                     Text("eMail")
                     TextField("Email", text: $email)
                 }
-       
-                Section {
+                Section  {
                     Text("Passord")
                     SecureField("Legg inn passord", text: $password)
                 }
-                
                 Section {
                     Text("Passord two")
                     SecureField("Legg inn passord two", text: $password_two)
                 }
-                
+                Section {
+                    Text("Passord three")
+                    SecureField("Legg inn passord two", text: $password_three)
+                }
             }
-            // .padding()
             .navigationBarTitle(Text("Person opplysninger"))
         }
     }
