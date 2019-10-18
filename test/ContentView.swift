@@ -13,29 +13,34 @@ struct ContentView : View {
     @State private var name: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
+    @State private var password_two: String = ""
 
     var body: some View {
         NavigationView {
             Form {
+                
                 Section {
-                    VStack {
-                        Text("Name")
-                        TextField("Name", text: $name)
-                    
-                        Spacer()
-                            Text("eMail")
-                            TextField("Email", text: $email)
-                   
-                        Spacer()
-                    
-                        Text("Passord")
-                        SecureField("Legg inn passord", text: $password)
-                    
-                        
-                    }
+                    Text("Name")
+                    TextField("Name", text: $name)
                 }
+                
+                Section {
+                    Text("eMail")
+                    TextField("Email", text: $email)
+                }
+       
+                Section {
+                    Text("Passord")
+                    SecureField("Legg inn passord", text: $password)
+                }
+                
+                Section {
+                    Text("Passord two")
+                    SecureField("Legg inn passord two", text: $password_two)
+                }
+                
             }
-            .padding()
+            // .padding()
             .navigationBarTitle(Text("Person opplysninger"))
         }
     }
