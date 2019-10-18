@@ -8,9 +8,36 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ContentView : View {
+
+    @State private var name: String = ""
+    @State private var email: String = ""
+    @State private var password: String = ""
+
     var body: some View {
-        Text("Hello, World!")
+        NavigationView {
+            Form {
+                Section {
+                    VStack {
+                        Text("Name")
+                        TextField("Name", text: $name)
+                    
+                        Spacer()
+                            Text("eMail")
+                            TextField("Email", text: $email)
+                   
+                        Spacer()
+                    
+                        Text("Passord")
+                        SecureField("Legg inn passord", text: $password)
+                    
+                        
+                    }
+                }
+            }
+            .padding()
+            .navigationBarTitle(Text("Person opplysninger"))
+        }
     }
 }
 
