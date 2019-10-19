@@ -14,36 +14,43 @@ import SwiftUI
 
 struct ContentView : View {
 
-    @State private var name: String = ""
-    @State private var email: String = ""
-    @State private var password: String = ""
-    @State private var password_two: String = ""
-    @State private var password_three: String = ""
-    @State private var password_four: String = ""
-
+    @State private var Fornavn: String = ""
+    @State private var Etternavn: String = ""
+    @State private var eMail: String = ""
+    @State private var Adresse: String = ""
+    @State private var Telefon: String = ""
+    @State private var Sted: String = ""
+    @State private var Kommune: String = ""
+    @State private var Born: String = ""
+    @State private var Gender: String = ""
+    @State private var Ekstra: String = ""
+ 
     var body: some View {
         NavigationView {
             Form {
-                Section (header: Text("Name")) {
-                    // Text("Name")
-                    TextField("Name", text: $name)
-                }
-                Section (header: Text("eMail")) {
-                    TextField("Email", text: $email)
-                }
-                Section (header: Text("Passord")) {
-                    SecureField("Legg inn passord", text: $password)
-                }
-                Section (header: Text("Passord two")
-                    .padding(5).lineLimit(nil)) {
-                    SecureField("Legg inn passord two", text: $password_two)
-                }
-                Section (header: Text("Passord three")) {
-                    SecureField("Legg inn passord three", text: $password_three)
-                }
-                Section (header: Text("Passord four")) {
-                    SecureField("Legg inn passord four", text: $password_four)
-                }
+                Section { // Det kan bare være 10 elementer i en section!
+                    TextField("Legg inn fornavn", text: $Fornavn)
+                        .padding(8)
+                    TextField("Legg inn etternavn", text: $Etternavn)
+                        .padding(8)
+                    SecureField("Legg inn e-post", text: $eMail)
+                        .padding(8)
+                    SecureField("Legg inn adresse", text: $Adresse)
+                        .padding(8)
+                    SecureField("Legg inn telefon", text: $Telefon)
+                        .padding(8)
+                    SecureField("Legg inn sted", text: $Sted)
+                        .padding(8)
+                    TextField("Legg inn kommune", text: $Kommune)
+                        .padding(8)
+                    TextField("Legg inn født", text: $Born)
+                        .padding(8)
+                    TextField("Legg inn kjønn", text: $Gender)
+                        .padding(8)
+                    TextField("Legg inn ekstra", text: $Ekstra)
+                        .padding(8)
+                    
+               }
             }
             .navigationBarTitle(Text("Person opplysninger"))
         }
